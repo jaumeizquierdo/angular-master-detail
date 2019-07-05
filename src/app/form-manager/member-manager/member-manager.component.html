@@ -1,0 +1,20 @@
+<div class="container">
+
+  <app-member-form (enviarUsuario)="mostrar($event)"></app-member-form>
+
+  <div class="row" *ngIf="User != undefined">
+    <strong>Ultimo usuario:</strong>
+    <br>
+    <ul>
+      <li>
+        <strong>Id:</strong> {{User.id}}</li>
+      <li>
+        <strong>DNI:</strong> {{User.dni}}</li>
+      <li>
+        <strong>Nombre:</strong> {{User.nombre}}</li>
+    </ul>
+  </div>
+
+  <app-member-list [UsersArray]="UsersArray" [registeredUsers]="registeredUsers" (eraseUser)="erase($event)"></app-member-list>
+
+</div>

@@ -1,0 +1,25 @@
+<div class="row">
+    <strong>Número de usuarios registrados: {{registeredUsers}}</strong>
+  </div>
+  <div *ngIf="registeredUsers > 0">
+    <div class="row">
+      <h4>Lista de Usuarios</h4>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">ID</div>
+      <div class="col-sm-2">DNI</div>
+      <div class="col-sm-5">NOMBRE</div>
+      <div class="col-sm-1">&nbsp;</div>
+    </div>
+    <div *ngFor="let UserItem of UsersArray">
+      <div class="row">
+        <div class="col-sm-4">{{ UserItem.id }}</div>
+        <div class="col-sm-2">{{ UserItem.dni }}</div>
+        <div class="col-sm-5">{{ UserItem.nombre }}</div>
+        <div class="col-sm-1 text-right">
+          <input type="button" (click)="deleteUser(UserItem)" class="btn btn-danger btn-xs" value="X">
+        </div>
+      </div>
+    </div>
+  </div>
+
